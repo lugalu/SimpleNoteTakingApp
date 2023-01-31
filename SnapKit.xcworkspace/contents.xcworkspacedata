@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:SnapKit.xcodeproj">
+      location = "group:/Users/lugalu/Documents/Projects/SnapKit/SnapKitTest.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
