@@ -13,11 +13,12 @@
 		0955CCA42988885E002F8B1F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0955CCA22988885E002F8B1F /* Main.storyboard */; };
 		0955CCA62988885F002F8B1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0955CCA52988885F002F8B1F /* Assets.xcassets */; };
 		0955CCA92988885F002F8B1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0955CCA72988885F002F8B1F /* LaunchScreen.storyboard */; };
+		09F14310298C87EA0079989B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 09F1430F298C87E90079989B /* GoogleService-Info.plist */; };
 		D55697D7706EA16930655423 /* Pods_SnapKitTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 125D9CAC4DD58A884FE4F2F6 /* Pods_SnapKitTest.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0955CC992988885E002F8B1F /* SnapKitTestTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnapKitTestTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0955CC992988885E002F8B1F /* SnapKitTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnapKitTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0955CC9C2988885E002F8B1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0955CC9E2988885E002F8B1F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		0955CCA02988885E002F8B1F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -25,6 +26,7 @@
 		0955CCA52988885F002F8B1F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0955CCA82988885F002F8B1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0955CCAA2988885F002F8B1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		09F1430F298C87E90079989B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		125D9CAC4DD58A884FE4F2F6 /* Pods_SnapKitTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SnapKitTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3264C287ECB85AF3DD8BCB24 /* Pods-SnapKitTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnapKitTest.debug.xcconfig"; path = "Target Support Files/Pods-SnapKitTest/Pods-SnapKitTest.debug.xcconfig"; sourceTree = "<group>"; };
 		8720FF7D6524240B9AECDF27 /* Pods-SnapKitTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnapKitTest.release.xcconfig"; path = "Target Support Files/Pods-SnapKitTest/Pods-SnapKitTest.release.xcconfig"; sourceTree = "<group>"; };
@@ -55,7 +57,7 @@
 		0955CC9A2988885E002F8B1F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0955CC992988885E002F8B1F /* SnapKitTestTest.app */,
+				0955CC992988885E002F8B1F /* SnapKitTest.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -70,6 +72,7 @@
 				0955CCA52988885F002F8B1F /* Assets.xcassets */,
 				0955CCA72988885F002F8B1F /* LaunchScreen.storyboard */,
 				0955CCAA2988885F002F8B1F /* Info.plist */,
+				09F1430F298C87E90079989B /* GoogleService-Info.plist */,
 			);
 			path = SnapKitTest;
 			sourceTree = "<group>";
@@ -94,9 +97,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0955CC982988885E002F8B1F /* SnapKitTestTest */ = {
+		0955CC982988885E002F8B1F /* SnapKitTest */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0955CCAD2988885F002F8B1F /* Build configuration list for PBXNativeTarget "SnapKitTestTest" */;
+			buildConfigurationList = 0955CCAD2988885F002F8B1F /* Build configuration list for PBXNativeTarget "SnapKitTest" */;
 			buildPhases = (
 				EB2076D81649BEB567D7BBF9 /* [CP] Check Pods Manifest.lock */,
 				0955CC952988885E002F8B1F /* Sources */,
@@ -108,9 +111,9 @@
 			);
 			dependencies = (
 			);
-			name = SnapKitTestTest;
+			name = SnapKitTest;
 			productName = SnapKit;
-			productReference = 0955CC992988885E002F8B1F /* SnapKitTestTest.app */;
+			productReference = 0955CC992988885E002F8B1F /* SnapKitTest.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -141,7 +144,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0955CC982988885E002F8B1F /* SnapKitTestTest */,
+				0955CC982988885E002F8B1F /* SnapKitTest */,
 			);
 		};
 /* End PBXProject section */
@@ -152,6 +155,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0955CCA92988885F002F8B1F /* LaunchScreen.storyboard in Resources */,
+				09F14310298C87EA0079989B /* GoogleService-Info.plist in Resources */,
 				0955CCA62988885F002F8B1F /* Assets.xcassets in Resources */,
 				0955CCA42988885E002F8B1F /* Main.storyboard in Resources */,
 			);
@@ -358,7 +362,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = G8P85U8XP2;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SnapKit/Info.plist;
+				INFOPLIST_FILE = SnapKitTest/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -386,7 +390,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = G8P85U8XP2;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SnapKit/Info.plist;
+				INFOPLIST_FILE = SnapKitTest/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -416,7 +420,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0955CCAD2988885F002F8B1F /* Build configuration list for PBXNativeTarget "SnapKitTestTest" */ = {
+		0955CCAD2988885F002F8B1F /* Build configuration list for PBXNativeTarget "SnapKitTest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0955CCAE2988885F002F8B1F /* Debug */,
