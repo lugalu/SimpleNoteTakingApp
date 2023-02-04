@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0909C16F298DD4B2005D4AAB /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0909C16E298DD4B2005D4AAB /* TabBar.swift */; };
+		0909C175298DDAA0005D4AAB /* NoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0909C174298DDAA0005D4AAB /* NoteModel.swift */; };
 		0955CC9D2988885E002F8B1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0955CC9C2988885E002F8B1F /* AppDelegate.swift */; };
 		0955CC9F2988885E002F8B1F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0955CC9E2988885E002F8B1F /* SceneDelegate.swift */; };
 		0955CCA12988885E002F8B1F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0955CCA02988885E002F8B1F /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		0909C16E298DD4B2005D4AAB /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TabBar.swift; path = Assets.xcassets/TabBar.swift; sourceTree = "<group>"; };
+		0909C174298DDAA0005D4AAB /* NoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteModel.swift; sourceTree = "<group>"; };
 		0955CC992988885E002F8B1F /* SnapKitTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnapKitTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0955CC9C2988885E002F8B1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0955CC9E2988885E002F8B1F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -46,6 +48,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0909C171298DDA7D005D4AAB /*  NoteListing */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = " NoteListing";
+			sourceTree = "<group>";
+		};
+		0909C172298DDA87005D4AAB /* Note */ = {
+			isa = PBXGroup;
+			children = (
+				0909C174298DDAA0005D4AAB /* NoteModel.swift */,
+			);
+			path = Note;
+			sourceTree = "<group>";
+		};
 		0955CC902988885E002F8B1F = {
 			isa = PBXGroup;
 			children = (
@@ -67,6 +84,8 @@
 		0955CC9B2988885E002F8B1F /* SnapKitTest */ = {
 			isa = PBXGroup;
 			children = (
+				0909C172298DDA87005D4AAB /* Note */,
+				0909C171298DDA7D005D4AAB /*  NoteListing */,
 				0955CC9C2988885E002F8B1F /* AppDelegate.swift */,
 				0909C16E298DD4B2005D4AAB /* TabBar.swift */,
 				0955CC9E2988885E002F8B1F /* SceneDelegate.swift */,
@@ -213,6 +232,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0909C175298DDAA0005D4AAB /* NoteModel.swift in Sources */,
 				0955CCA12988885E002F8B1F /* ViewController.swift in Sources */,
 				0955CC9D2988885E002F8B1F /* AppDelegate.swift in Sources */,
 				0909C16F298DD4B2005D4AAB /* TabBar.swift in Sources */,
