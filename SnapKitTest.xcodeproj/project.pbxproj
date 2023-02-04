@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0909C16F298DD4B2005D4AAB /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0909C16E298DD4B2005D4AAB /* TabBar.swift */; };
 		0955CC9D2988885E002F8B1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0955CC9C2988885E002F8B1F /* AppDelegate.swift */; };
 		0955CC9F2988885E002F8B1F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0955CC9E2988885E002F8B1F /* SceneDelegate.swift */; };
 		0955CCA12988885E002F8B1F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0955CCA02988885E002F8B1F /* ViewController.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0909C16E298DD4B2005D4AAB /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TabBar.swift; path = Assets.xcassets/TabBar.swift; sourceTree = "<group>"; };
 		0955CC992988885E002F8B1F /* SnapKitTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnapKitTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0955CC9C2988885E002F8B1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0955CC9E2988885E002F8B1F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 			isa = PBXGroup;
 			children = (
 				0955CC9C2988885E002F8B1F /* AppDelegate.swift */,
+				0909C16E298DD4B2005D4AAB /* TabBar.swift */,
 				0955CC9E2988885E002F8B1F /* SceneDelegate.swift */,
 				0955CCA02988885E002F8B1F /* ViewController.swift */,
 				0955CCA22988885E002F8B1F /* Main.storyboard */,
@@ -212,6 +215,7 @@
 			files = (
 				0955CCA12988885E002F8B1F /* ViewController.swift in Sources */,
 				0955CC9D2988885E002F8B1F /* AppDelegate.swift in Sources */,
+				0909C16F298DD4B2005D4AAB /* TabBar.swift in Sources */,
 				0955CC9F2988885E002F8B1F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

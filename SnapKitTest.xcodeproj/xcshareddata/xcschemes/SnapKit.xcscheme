@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "0955CC982988885E002F8B1F"
-               BuildableName = "SnapKitTestTest.app"
-               BlueprintName = "SnapKitTestTest"
+               BuildableName = "SnapKitTest.app"
+               BlueprintName = "SnapKitTest"
                ReferencedContainer = "container:SnapKitTest.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,8 +45,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0955CC982988885E002F8B1F"
-            BuildableName = "SnapKitTestTest.app"
-            BlueprintName = "SnapKitTestTest"
+            BuildableName = "SnapKitTest.app"
+            BlueprintName = "SnapKitTest"
             ReferencedContainer = "container:SnapKitTest.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -62,8 +62,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0955CC982988885E002F8B1F"
-            BuildableName = "SnapKitTestTest.app"
-            BlueprintName = "SnapKitTestTest"
+            BuildableName = "SnapKitTest.app"
+            BlueprintName = "SnapKitTest"
             ReferencedContainer = "container:SnapKitTest.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
