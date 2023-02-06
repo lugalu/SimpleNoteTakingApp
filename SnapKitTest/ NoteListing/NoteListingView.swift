@@ -50,7 +50,11 @@ class NoteListingView: UIViewController, NoteListingViewProtocol {
         
         notesView.rx.modelSelected(NoteListingCell.self)
             .subscribe(onNext: {[weak self] element in
-                //let router
+                guard let note = element.note, let self else { return }
+                
+                var router: NoteListingRouterProtocol? = NoteListingRouter()
+                router?.openNoteEditing(withNote: note, View: self)
+                
             }).disposed(by: disposeBag)
         
     }

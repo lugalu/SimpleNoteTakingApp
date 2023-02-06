@@ -5,10 +5,10 @@
 //  Created by Lugalu on 05/02/23.
 //
 
-import Foundation
+import UIKit
 
 protocol NoteListingRouterProtocol{
-    
+    func openNoteEditing(withNote note: Note, View view: UIViewController)
 }
 
 protocol NoteListingPresenterProtocol{
