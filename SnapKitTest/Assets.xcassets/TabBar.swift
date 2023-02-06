@@ -13,8 +13,8 @@ class TabBar: UITabBarController {
         super.viewDidLoad()
         
         self.viewControllers = [
-            createNavController(for: ViewController(), title: "Private", image: UIImage(systemName: "lock")),
-            createNavController(for: ViewController(), title: "Public", image: UIImage(systemName: "lock.open"))
+            createNavController(for: NoteListingView(), title: "Private", image: UIImage(systemName: "lock"))
+           // createNavController(for: NoteListingView(), title: "Public", image: UIImage(systemName: "lock.open"))
                                
         ]
     }

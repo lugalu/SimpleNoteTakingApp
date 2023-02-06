@@ -1,8 +1,8 @@
 //
-//  ViewController.swift
-//  SnapKit
+//  NoteListing + Constraints.swift
+//  SnapKitTest
 //
-//  Created by Lugalu on 30/01/23.
+//  Created by Lugalu on 05/02/23.
 //
 
 import UIKit
@@ -10,27 +10,8 @@ import SnapKit
 import RxSwift
 import RxCocoa
 
-class ViewController: UIViewController {
-    let disposeBag = DisposeBag()
-    
-    let notesView: UITableView = UITableView()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        self.makeUI()
-        self.configureElements()
-        
-    }
-
-    func configureElements(){
-        //TODO: Bind notesArr to TableView
-    }
-
-}
-
-extension ViewController {
-    func makeUI(){
+extension NoteListingView {
+    public func makeUI(){
         makeNavBar()
         addViews()
         makeNotesConstraints()
@@ -64,4 +45,3 @@ extension ViewController {
     
     
 }
-
