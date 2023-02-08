@@ -16,6 +16,11 @@
 		0909C180299069E1005D4AAB /* NoteListingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0909C17F299069E1005D4AAB /* NoteListingRouter.swift */; };
 		0909C18229906C24005D4AAB /* NoteListingProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0909C18129906C24005D4AAB /* NoteListingProtocols.swift */; };
 		0909C1842991C4FD005D4AAB /* NoteListingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0909C1832991C4FD005D4AAB /* NoteListingCell.swift */; };
+		0909C186299312EF005D4AAB /* NoteEditingProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0909C185299312EF005D4AAB /* NoteEditingProtocols.swift */; };
+		0909C18829931430005D4AAB /* NoteEditingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0909C18729931430005D4AAB /* NoteEditingView.swift */; };
+		0909C18A29931447005D4AAB /* NoteEditingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0909C18929931447005D4AAB /* NoteEditingInteractor.swift */; };
+		0909C18C29931457005D4AAB /* NoteEditingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0909C18B29931457005D4AAB /* NoteEditingPresenter.swift */; };
+		0909C18E29931477005D4AAB /* NoteEditingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0909C18D29931477005D4AAB /* NoteEditingRouter.swift */; };
 		0955CC9D2988885E002F8B1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0955CC9C2988885E002F8B1F /* AppDelegate.swift */; };
 		0955CC9F2988885E002F8B1F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0955CC9E2988885E002F8B1F /* SceneDelegate.swift */; };
 		0955CCA42988885E002F8B1F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0955CCA22988885E002F8B1F /* Main.storyboard */; };
@@ -35,6 +40,11 @@
 		0909C17F299069E1005D4AAB /* NoteListingRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListingRouter.swift; sourceTree = "<group>"; };
 		0909C18129906C24005D4AAB /* NoteListingProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListingProtocols.swift; sourceTree = "<group>"; };
 		0909C1832991C4FD005D4AAB /* NoteListingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListingCell.swift; sourceTree = "<group>"; };
+		0909C185299312EF005D4AAB /* NoteEditingProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteEditingProtocols.swift; sourceTree = "<group>"; };
+		0909C18729931430005D4AAB /* NoteEditingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteEditingView.swift; sourceTree = "<group>"; };
+		0909C18929931447005D4AAB /* NoteEditingInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteEditingInteractor.swift; sourceTree = "<group>"; };
+		0909C18B29931457005D4AAB /* NoteEditingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteEditingPresenter.swift; sourceTree = "<group>"; };
+		0909C18D29931477005D4AAB /* NoteEditingRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteEditingRouter.swift; sourceTree = "<group>"; };
 		0955CC992988885E002F8B1F /* SnapKitTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnapKitTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0955CC9C2988885E002F8B1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0955CC9E2988885E002F8B1F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +95,11 @@
 		0909C17629906774005D4AAB /* Note Editing */ = {
 			isa = PBXGroup;
 			children = (
+				0909C185299312EF005D4AAB /* NoteEditingProtocols.swift */,
+				0909C18729931430005D4AAB /* NoteEditingView.swift */,
+				0909C18929931447005D4AAB /* NoteEditingInteractor.swift */,
+				0909C18B29931457005D4AAB /* NoteEditingPresenter.swift */,
+				0909C18D29931477005D4AAB /* NoteEditingRouter.swift */,
 			);
 			path = "Note Editing";
 			sourceTree = "<group>";
@@ -261,12 +276,17 @@
 				0909C175298DDAA0005D4AAB /* NoteModel.swift in Sources */,
 				0909C17A299067FE005D4AAB /* NoteListing + Constraints.swift in Sources */,
 				0909C17C299069B4005D4AAB /* NotesListingPresenter.swift in Sources */,
+				0909C18A29931447005D4AAB /* NoteEditingInteractor.swift in Sources */,
+				0909C18829931430005D4AAB /* NoteEditingView.swift in Sources */,
 				0909C1842991C4FD005D4AAB /* NoteListingCell.swift in Sources */,
 				0909C180299069E1005D4AAB /* NoteListingRouter.swift in Sources */,
 				0955CC9D2988885E002F8B1F /* AppDelegate.swift in Sources */,
 				0909C16F298DD4B2005D4AAB /* TabBar.swift in Sources */,
 				0909C18229906C24005D4AAB /* NoteListingProtocols.swift in Sources */,
+				0909C18C29931457005D4AAB /* NoteEditingPresenter.swift in Sources */,
+				0909C186299312EF005D4AAB /* NoteEditingProtocols.swift in Sources */,
 				0909C17E299069C5005D4AAB /* NotesListingInteractor.swift in Sources */,
+				0909C18E29931477005D4AAB /* NoteEditingRouter.swift in Sources */,
 				0955CC9F2988885E002F8B1F /* SceneDelegate.swift in Sources */,
 				0909C178299067BA005D4AAB /* NoteListingView.swift in Sources */,
 			);

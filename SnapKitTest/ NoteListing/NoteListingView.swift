@@ -22,7 +22,6 @@ class NoteListingView: UIViewController, NoteListingViewProtocol {
     
     init(){
         super.init(nibName: nil, bundle: nil)
-        interactor = NoteListingInteractor(view: self)
     }
     
     required init?(coder: NSCoder) {
@@ -52,7 +51,7 @@ class NoteListingView: UIViewController, NoteListingViewProtocol {
             .subscribe(onNext: {[weak self] element in
                 guard let note = element.note, let self else { return }
                 
-                var router: NoteListingRouterProtocol? = NoteListingRouter()
+                let router: NoteListingRouterProtocol? = NoteListingRouter()
                 router?.openNoteEditing(withNote: note, View: self)
                 
             }).disposed(by: disposeBag)

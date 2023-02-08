@@ -15,6 +15,6 @@ class NoteListingPresenter: NoteListingPresenterProtocol {
     }
     
     func presentNewNotes(newNotes: [Note]){
-        
+        view?.insertNewContent(newNotes)
     }
 }

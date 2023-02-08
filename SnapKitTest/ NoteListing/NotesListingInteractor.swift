@@ -11,10 +11,10 @@ import RealmSwift
 
 class NoteListingInteractor: NoteListingInteractorProtocol {
     let disposeBag = DisposeBag()
-    var view: NoteListingViewProtocol?
+    var presenter: NoteListingPresenterProtocol?
     
-    init(view: NoteListingViewProtocol? = nil){
-        self.view = view
+    init(presenter: NoteListingPresenterProtocol? = nil){
+        self.presenter = presenter
     }
     
     func fetchAllNotes(){
@@ -40,7 +40,7 @@ class NoteListingInteractor: NoteListingInteractorProtocol {
             }
             
         }.subscribe(onSuccess:{ [weak self] result in
-            self?.view?.insertNewContent(result)
+            self?.presenter?.presentNewNotes(newNotes: result)
         })
         .disposed(by: disposeBag)
     }

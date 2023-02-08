@@ -12,15 +12,20 @@ protocol NoteListingRouterProtocol{
 }
 
 protocol NoteListingPresenterProtocol{
+    var view: NoteListingViewProtocol? {get set}
+    
     func presentNewNotes(newNotes: [Note])
 }
 
 protocol NoteListingInteractorProtocol{
+    var presenter: NoteListingPresenterProtocol? {get set}
     
     func fetchAllNotes()
     
 }
 
-protocol NoteListingViewProtocol{
+protocol NoteListingViewProtocol: UIViewController{
+    var interactor: NoteListingInteractorProtocol? {get set}
+    
     func insertNewContent(_ notes: [Note])
 }

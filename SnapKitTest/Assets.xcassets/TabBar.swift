@@ -12,8 +12,10 @@ class TabBar: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let noteEditingPrivate = NoteListingRouter.createView()
+        
         self.viewControllers = [
-            createNavController(for: NoteListingView(), title: "Private", image: UIImage(systemName: "lock"))
+            createNavController(for: noteEditingPrivate, title: "Private", image: UIImage(systemName: "lock"))
            // createNavController(for: NoteListingView(), title: "Public", image: UIImage(systemName: "lock.open"))
                                
         ]

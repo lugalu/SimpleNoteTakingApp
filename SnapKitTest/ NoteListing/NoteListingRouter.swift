@@ -20,4 +20,14 @@ struct NoteListingRouter: NoteListingRouterProtocol {
         // view.present(<#T##viewControllerToPresent: UIViewController##UIViewController#>, animated: true)
         return
     }
+    
+    static func createView() -> NoteListingViewProtocol{
+        var view: NoteListingViewProtocol = NoteListingView()
+        let presenter: NoteListingPresenterProtocol = NoteListingPresenter(view: view)
+        let interactor: NoteListingInteractorProtocol = NoteListingInteractor(presenter: presenter)
+        
+        view.interactor = interactor
+        
+        return view
+    }
 }
