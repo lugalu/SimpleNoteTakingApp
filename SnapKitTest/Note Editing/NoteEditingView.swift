@@ -6,11 +6,14 @@
 //
 
 import UIKit
-
+import RxSwift
 
 class NoteEditingView: UIViewController, NoteEditingViewProtocol {
-    var interactor: NoteEditingInteractorProtocol? = nil
     
+    var disposeBag: DisposeBag = DisposeBag()
+    
+    
+    var interactor: NoteEditingInteractorProtocol? = nil
     
     var noteTitleView: UITextField = {
         var textfield = UITextField()
@@ -23,57 +26,22 @@ class NoteEditingView: UIViewController, NoteEditingViewProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.navigationItem.title = "Editing"
-        
-        makeUI()
-        createSubscribers()
-    }
 
-    func createSubscribers(){
+        self.navigationItem.title = "Editing"
+        makeUI()
         
     }
     
-    func couldSave(){
-        self.navigationItem.title = "Saved"
+    func couldSave(_ status: Bool) {
+        self.navigationItem.title = status ? "Saved" : "Couldn't Save"
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+
             self.navigationItem.title = "Editing"
         }
     }
-    
-    func couldntSave(){
-        
-    }
 
-}
-
-extension NoteEditingView{
-    public func makeUI(){
-        addViews()
-        makeConstraints()
-        
+    func insertContents(_ note: Note) {
+        self.noteTitleView.text = note.title
+        self.noteContentView.text = note.content
     }
-    
-    private func addViews(){
-        view.addSubview(noteTitleView)
-        view.addSubview(noteContentView)
-    }
-    
-    private func makeConstraints(){
-        noteTitleView.snp.makeConstraints{ make in
-            make.leading.trailing.top.equalToSuperview()
-            make.height.equalTo(30)
-        }
-        
-        noteContentView.snp.makeConstraints{ make in
-            make.leading.trailing.equalToSuperview()
-            make.top.equalTo(noteTitleView.snp.bottom).offset(16)
-            make.bottom.equalToSuperview()
-            
-        }
-        
-        
-    }
-    
-    
 }

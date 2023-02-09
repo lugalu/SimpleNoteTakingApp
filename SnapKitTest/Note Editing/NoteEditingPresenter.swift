@@ -7,14 +7,15 @@
 
 import Foundation
 
-class NoteEditingPresenter: NoteEditingPresenterProtocol{
+class NoteEditingPresenter: NoteEditingPresenterProtocol {
     var view: NoteEditingViewProtocol?
-    //Warns the view if the title change can occur
-    //Warns the view if the content Change can occur
-    //insert the already Existing contents
     
-    func couldSave(_ worked: Bool){
-        worked ? view : view
+    func couldSave(_ status: Bool) {
+        view?.couldSave(status)
+    }
+    
+    func insertContents(_ note: Note) {
+        view?.insertContents(note)
     }
     
 }
