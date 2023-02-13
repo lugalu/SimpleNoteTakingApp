@@ -22,15 +22,22 @@ class NoteListingCell: UITableViewCell{
         self.note = note
         makeUI()
         addContents()
+        
+        //self.rx.
     }
     
     private func makeUI(){
+        self.addSubview(title)
+        
         title.snp.makeConstraints{ make in
-            make.top.bottom.trailing.leading.equalToSuperview()
+            make.top.bottom.leading.trailing.equalToSuperview()
         }
     }
     
     private func addContents(){
         title.text = note?.title ?? ""
     }
+    
+    
+    
 }

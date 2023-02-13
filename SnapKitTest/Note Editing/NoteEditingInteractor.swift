@@ -25,19 +25,32 @@ class NoteEditingInteractor: NoteEditingInteractorProtocol {
             return
         }
         
-        //create New Note
+        createNewNote(title, content: content)
     }
 
     private func saveExisting(_ title: String? = "", content: String? = ""){
-        // Call Service
+        switch note?.editNote(title: title, content: content) {
+        case .success(_):
+            print("Success saving")
+            presenter?.couldSave(true)
+        case .failure(let error):
+            print(error.localizedDescription)
+            presenter?.couldSave(false)
+        default:
+            print("note is nil")
+        }
     }
     
     private func createNewNote(_ title: String? = "", content: String? = ""){
-        // Call Service
+        
+        switch Note.insertNewNote(withTitle: title, withContent: content) {
+        case .success( let newNote):
+            self.note = newNote
+            presenter?.couldSave(true)
+        case .failure(let error):
+            print(error.localizedDescription)
+            presenter?.couldSave(false)
+        }
     }
-    
-    // Missing Service
-    // Save/Create note in realm
-    // Warn presenter
     
 }

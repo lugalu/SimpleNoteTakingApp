@@ -15,7 +15,16 @@ extension NoteEditingView {
     public func makeUI() {
         addViews()
         makeConstraints()
+        makeNavBar()
         
+        self.noteTitleView.layer.cornerRadius = 10
+        self.noteContentView.layer.borderColor = UIColor.systemGray.cgColor
+        self.noteTitleView.borderStyle = .roundedRect
+        self.noteTitleView.placeholder = "Title"
+        
+        self.noteContentView.layer.cornerRadius = 10
+        self.noteContentView.layer.borderColor = UIColor.systemGray.cgColor.copy(alpha: 0.5)
+        self.noteContentView.layer.borderWidth = 1
     }
     
     private func makeNavBar(){
@@ -27,7 +36,7 @@ extension NoteEditingView {
         })
         .disposed(by: disposeBag)
         
-        self.navigationItem.leftBarButtonItem = saveBtn
+        self.navigationItem.rightBarButtonItem = saveBtn
     }
     
     private func addViews() {
@@ -37,14 +46,15 @@ extension NoteEditingView {
     
     private func makeConstraints() {
         noteTitleView.snp.makeConstraints{ make in
-            make.leading.trailing.top.equalToSuperview()
+            make.leading.trailing.equalToSuperview()
+            make.top.equalTo(view.safeAreaLayoutGuide)
             make.height.equalTo(30)
         }
         
         noteContentView.snp.makeConstraints{ make in
             make.leading.trailing.equalToSuperview()
             make.top.equalTo(noteTitleView.snp.bottom).offset(16)
-            make.bottom.equalToSuperview()
+            make.bottom.equalTo(view.safeAreaLayoutGuide)
             
         }
         

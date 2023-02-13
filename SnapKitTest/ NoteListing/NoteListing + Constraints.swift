@@ -23,7 +23,10 @@ extension NoteListingView {
         
         button.rx.tap.subscribe(onNext: { [weak self] event in
             guard let self else { return }
-            //TODO: go to ADD Page
+            let router: NoteListingRouterProtocol? = NoteListingRouter()
+            router?.openNoteEditing(withNote: nil, View: self)
+            
+            
             print(self)
             
         }).disposed(by: disposeBag)

@@ -10,7 +10,7 @@ import Foundation
 class NoteEditingRouter: NoteEditingRouterProtocol {
     
     static func createView(_ note: Note? = nil) -> NoteEditingViewProtocol {
-        var view: NoteEditingViewProtocol = NoteEditingView()
+        let view: NoteEditingViewProtocol = NoteEditingView()
         var interactor: NoteEditingInteractorProtocol = NoteEditingInteractor()
         var presenter: NoteEditingPresenterProtocol = NoteEditingPresenter()
         

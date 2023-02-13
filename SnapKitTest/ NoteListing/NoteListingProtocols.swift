@@ -8,7 +8,7 @@
 import UIKit
 
 protocol NoteListingRouterProtocol{
-    func openNoteEditing(withNote note: Note, View view: UIViewController)
+    func openNoteEditing(withNote note: Note?, View view: UIViewController)
 }
 
 protocol NoteListingPresenterProtocol{
