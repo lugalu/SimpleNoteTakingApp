@@ -9,6 +9,11 @@ import Foundation
 
 class NoteEditingInteractor: NoteEditingInteractorProtocol {
     var presenter: NoteEditingPresenterProtocol?
+    var accessLevel: AccessType
+    
+    init(accessLevel: AccessType) {
+        self.accessLevel = accessLevel
+    }
     
     var note: Note? = nil {
         didSet{
@@ -18,7 +23,6 @@ class NoteEditingInteractor: NoteEditingInteractorProtocol {
     }
 
     func save(withTitle title: String? = "", withContent content: String? = "") {
-        //warn presenter if it worked or not
         
         if note != nil {
             saveExisting(title, content: content)
@@ -29,20 +33,32 @@ class NoteEditingInteractor: NoteEditingInteractorProtocol {
     }
 
     private func saveExisting(_ title: String? = "", content: String? = ""){
+        accessLevel == .publicDB ? saveToCloud(title, content) : saveToLocal(title, content)
+    }
+    
+    private func saveToLocal(_ title: String? = "", _ content: String? = ""){
         switch note?.editNote(title: title, content: content) {
         case .success(_):
-            print("Success saving")
             presenter?.couldSave(true)
-        case .failure(let error):
-            print(error.localizedDescription)
+            
+        case .failure(_):
             presenter?.couldSave(false)
+            
         default:
             print("note is nil")
         }
     }
     
-    private func createNewNote(_ title: String? = "", content: String? = ""){
+    private func saveToCloud(_ title:String? = "", _ content: String? = ""){
         
+    }
+    
+    private func createNewNote(_ title: String? = "", content: String? = ""){
+        accessLevel == .publicDB ? uploadNewNote(title,content) : createNewLocalNote(title,content)
+        
+    }
+    
+    func createNewLocalNote(_ title: String? = "", _ content: String? = "") {
         switch Note.insertNewNote(withTitle: title, withContent: content) {
         case .success( let newNote):
             self.note = newNote
@@ -53,4 +69,7 @@ class NoteEditingInteractor: NoteEditingInteractorProtocol {
         }
     }
     
+    func uploadNewNote(_ title: String? = "", _ content: String? = "") {
+        
+    }
 }

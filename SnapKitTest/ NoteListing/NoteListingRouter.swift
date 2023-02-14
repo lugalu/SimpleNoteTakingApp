@@ -10,10 +10,10 @@ import UIKit
 
 struct NoteListingRouter: NoteListingRouterProtocol {
     
-    func openNoteEditing(withNote note: Note? = nil, View vc: UIViewController) {
+    func openNoteEditing(withNote note: Note? = nil, View vc: (NoteListingView)) {
         let view: NoteEditingViewProtocol = NoteEditingView()
         var presenter: NoteEditingPresenterProtocol = NoteEditingPresenter()
-        var interactor: NoteEditingInteractorProtocol = NoteEditingInteractor()
+        var interactor: NoteEditingInteractorProtocol = NoteEditingInteractor(accessLevel: vc.interactor?.accessLevel ?? .privateDB)
         
         view.interactor = interactor
         interactor.presenter = presenter
@@ -26,10 +26,10 @@ struct NoteListingRouter: NoteListingRouterProtocol {
         }
     }
     
-    static func createView() -> NoteListingViewProtocol{
+    static func createView(withAccessLevel accessLevel: AccessType) -> NoteListingViewProtocol{
         let view: NoteListingViewProtocol = NoteListingView()
         var presenter: NoteListingPresenterProtocol = NoteListingPresenter()
-        var interactor: NoteListingInteractorProtocol = NoteListingInteractor()
+        var interactor: NoteListingInteractorProtocol = NoteListingInteractor(accessLevel: accessLevel)
         
         view.interactor = interactor
         interactor.presenter = presenter

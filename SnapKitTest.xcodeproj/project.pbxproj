@@ -28,6 +28,8 @@
 		0955CCA62988885F002F8B1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0955CCA52988885F002F8B1F /* Assets.xcassets */; };
 		0955CCA92988885F002F8B1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0955CCA72988885F002F8B1F /* LaunchScreen.storyboard */; };
 		097BD749299AFD6C00250354 /* NoteListingView + Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097BD748299AFD6C00250354 /* NoteListingView + Delegate.swift */; };
+		097BD74C299B01B500250354 /* FireBaseMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097BD74B299B01B500250354 /* FireBaseMain.swift */; };
+		097BD74E299B01CC00250354 /* ServerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097BD74D299B01CC00250354 /* ServerProtocol.swift */; };
 		09F14310298C87EA0079989B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 09F1430F298C87E90079989B /* GoogleService-Info.plist */; };
 		D55697D7706EA16930655423 /* Pods_SnapKitTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 125D9CAC4DD58A884FE4F2F6 /* Pods_SnapKitTest.framework */; };
 /* End PBXBuildFile section */
@@ -56,6 +58,8 @@
 		0955CCA82988885F002F8B1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0955CCAA2988885F002F8B1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		097BD748299AFD6C00250354 /* NoteListingView + Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NoteListingView + Delegate.swift"; sourceTree = "<group>"; };
+		097BD74B299B01B500250354 /* FireBaseMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireBaseMain.swift; sourceTree = "<group>"; };
+		097BD74D299B01CC00250354 /* ServerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerProtocol.swift; sourceTree = "<group>"; };
 		09F1430F298C87E90079989B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		125D9CAC4DD58A884FE4F2F6 /* Pods_SnapKitTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SnapKitTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3264C287ECB85AF3DD8BCB24 /* Pods-SnapKitTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnapKitTest.debug.xcconfig"; path = "Target Support Files/Pods-SnapKitTest/Pods-SnapKitTest.debug.xcconfig"; sourceTree = "<group>"; };
@@ -131,6 +135,7 @@
 		0955CC9B2988885E002F8B1F /* SnapKitTest */ = {
 			isa = PBXGroup;
 			children = (
+				097BD74A299B019700250354 /* FirebaseAccess */,
 				0909C17629906774005D4AAB /* Note Editing */,
 				0909C172298DDA87005D4AAB /* Note */,
 				0909C171298DDA7D005D4AAB /*  NoteListing */,
@@ -144,6 +149,15 @@
 				09F1430F298C87E90079989B /* GoogleService-Info.plist */,
 			);
 			path = SnapKitTest;
+			sourceTree = "<group>";
+		};
+		097BD74A299B019700250354 /* FirebaseAccess */ = {
+			isa = PBXGroup;
+			children = (
+				097BD74B299B01B500250354 /* FireBaseMain.swift */,
+				097BD74D299B01CC00250354 /* ServerProtocol.swift */,
+			);
+			path = FirebaseAccess;
 			sourceTree = "<group>";
 		};
 		471A79A524CADF28544A7888 /* Frameworks */ = {
@@ -279,6 +293,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				097BD74C299B01B500250354 /* FireBaseMain.swift in Sources */,
 				0909C175298DDAA0005D4AAB /* NoteModel.swift in Sources */,
 				0909C17A299067FE005D4AAB /* NoteListing + Constraints.swift in Sources */,
 				0909C17C299069B4005D4AAB /* NotesListingPresenter.swift in Sources */,
@@ -286,6 +301,7 @@
 				0909C18829931430005D4AAB /* NoteEditingView.swift in Sources */,
 				0909C1902995BB0E005D4AAB /* NoteEditing + Constraints.swift in Sources */,
 				097BD749299AFD6C00250354 /* NoteListingView + Delegate.swift in Sources */,
+				097BD74E299B01CC00250354 /* ServerProtocol.swift in Sources */,
 				0909C1842991C4FD005D4AAB /* NoteListingCell.swift in Sources */,
 				0909C180299069E1005D4AAB /* NoteListingRouter.swift in Sources */,
 				0955CC9D2988885E002F8B1F /* AppDelegate.swift in Sources */,
