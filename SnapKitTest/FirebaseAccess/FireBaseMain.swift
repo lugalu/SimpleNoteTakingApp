@@ -6,12 +6,28 @@
 //
 
 import FirebaseCore
+import RxSwift
 
 enum AccessType{
     case privateDB
     case publicDB
 }
 
-class FireBaseMain{
+class FirebaseMain: ServerAccess{
+    func requestData() -> Single<[Note]> {
+        return Single.create{ _ in
+            
+            return Disposables.create()
+        }
+    }
+    
+    func insertNew(Note note: Note) -> Result<Void, Error> {
+        return .success(())
+    }
+    
+    func update(Note note: Note) -> Result<Void, Error> {
+        return .success(())
+    }
+    
     
 }

@@ -10,6 +10,8 @@ import UIKit
 extension NoteListingView: UITableViewDelegate{
   
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        guard self.interactor?.accessLevel != .publicDB else { return nil }
+        
         let deletebutton = UIContextualAction(style: .destructive, title: "delete", handler: {[weak self] _,_,_ in
             guard let self, let datasource = self.notesView.dataSource else { return }
             datasource.tableView?(tableView, commit: .delete, forRowAt: indexPath)
