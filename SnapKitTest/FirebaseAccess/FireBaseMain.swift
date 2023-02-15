@@ -5,7 +5,10 @@
 //  Created by Lugalu on 13/02/23.
 //
 
+import FirebaseCoreInternal
+import FirebaseDatabase
 import FirebaseCore
+
 import RxSwift
 
 enum AccessType{
@@ -14,6 +17,9 @@ enum AccessType{
 }
 
 class FirebaseMain: ServerAccess{
+    private let databaseRef = Database.database().reference(withPath: "Notes")
+    private var refObservers: [DatabaseHandle] = []
+    
     func requestData() -> Single<[Note]> {
         return Single.create{ _ in
             

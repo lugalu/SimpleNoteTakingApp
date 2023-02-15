@@ -9,7 +9,7 @@ import Foundation
 import RxSwift
 import RealmSwift
 
-class Note: Object{
+class Note: Object, Decodable{
     @objc dynamic var id: UUID = UUID()
     @objc dynamic var title: String = ""
     @objc dynamic var content: String = ""
