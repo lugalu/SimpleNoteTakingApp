@@ -50,7 +50,10 @@ class NoteEditingInteractor: NoteEditingInteractorProtocol {
     }
     
     private func saveToCloud(_ title:String? = "", _ content: String? = ""){
-        
+        self.note?.title = title ?? ""
+        self.note?.content = content ?? ""
+        ServerEntryPoint.update(Note: note!)
+        presenter?.couldSave(true)
     }
     
     private func createNewNote(_ title: String? = "", content: String? = ""){
@@ -70,6 +73,12 @@ class NoteEditingInteractor: NoteEditingInteractorProtocol {
     }
     
     func uploadNewNote(_ title: String? = "", _ content: String? = "") {
+        let note = Note()
+        note.title = title ?? ""
+        note.content = content ?? ""
+        self.note = note
         
+        ServerEntryPoint.insertNew(Note: note)
+        presenter?.couldSave(true)
     }
 }

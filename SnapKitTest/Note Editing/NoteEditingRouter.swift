@@ -9,9 +9,9 @@ import Foundation
 
 class NoteEditingRouter: NoteEditingRouterProtocol {
     
-    static func createView(_ note: Note? = nil) -> NoteEditingViewProtocol {
+    static func createView(_ note: Note? = nil, accessLevel: AccessType) -> NoteEditingViewProtocol {
         let view: NoteEditingViewProtocol = NoteEditingView()
-        var interactor: NoteEditingInteractorProtocol = NoteEditingInteractor()
+        var interactor: NoteEditingInteractorProtocol = NoteEditingInteractor(accessLevel: accessLevel)
         var presenter: NoteEditingPresenterProtocol = NoteEditingPresenter()
         
         interactor.presenter = presenter

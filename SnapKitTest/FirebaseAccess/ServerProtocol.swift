@@ -8,14 +8,15 @@
 import Foundation
 import RxSwift
 
-protocol ServerAccess{
-    var entryPoint: ServerAccess { get }
-    
-    func requestData() -> Single<[Note]>
-    func insertNew(Note note: Note) -> Result<Void,Error>
-    func update(Note note: Note) -> Result<Void, Error>
+var ServerEntryPoint: ServerAccess {
+    get {
+        return FirebaseMain()
+    }
 }
 
-extension ServerAccess{
-    var entryPoint: ServerAccess{ FirebaseMain() }
+protocol ServerAccess {
+    func requestData() -> Single<[Note]>
+    func insertNew(Note note: Note)
+    func update(Note note: Note)
+    func noteObserver() -> BehaviorSubject<[Note]>
 }

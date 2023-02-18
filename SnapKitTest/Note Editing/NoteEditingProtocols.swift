@@ -22,7 +22,7 @@ protocol NoteEditingPresenterProtocol {
 }
 
 protocol NoteEditingRouterProtocol {
-    static func createView(_ note: Note?) -> NoteEditingViewProtocol
+    static func createView(_ note: Note?, accessLevel: AccessType) -> NoteEditingViewProtocol
 }
 
 protocol NoteEditingInteractorProtocol{

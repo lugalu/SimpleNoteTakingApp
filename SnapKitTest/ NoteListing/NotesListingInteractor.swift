@@ -24,13 +24,16 @@ class NoteListingInteractor: NoteListingInteractorProtocol {
     
     private func retrieveLocalNotes(){
         Note.retrieveAllNotes()
-            .subscribe(onSuccess:{ [weak self] result in
+            .subscribe(onSuccess: { [weak self] result in
                 self?.presenter?.presentNewNotes(newNotes: result)
             })
             .disposed(by: disposeBag)
     }
     
     private func retrieveServerNotes(){
-        
+        ServerEntryPoint.noteObserver().subscribe(onNext: { [weak self] result in
+            self?.presenter?.presentNewNotes(newNotes: result)
+        })
+        .disposed(by: disposeBag)
     }
 }

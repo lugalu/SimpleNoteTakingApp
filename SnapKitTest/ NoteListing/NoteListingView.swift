@@ -34,9 +34,11 @@ class NoteListingView: UIViewController, NoteListingViewProtocol {
         
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.fetchNotes()
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        Task{
+            self.fetchNotes()
+        }
     }
     
     func fetchNotes(){
@@ -44,33 +46,36 @@ class NoteListingView: UIViewController, NoteListingViewProtocol {
     }
     
     func configureElements(){
-        _ = notes.bind(to: notesView.rx.items(cellIdentifier: "NotesListingCell", cellType: NoteListingCell.self)){ index, note, cell in
-            cell.configure(withNote: note)
-        }
-        
-        notesView.rx.modelSelected(Note.self)
-            .subscribe(onNext: {[weak self] element in
-                guard let self else { return }
-                
-                let router: NoteListingRouterProtocol? = NoteListingRouter()
-                router?.openNoteEditing(withNote: element, View: self)
-                
-            }).disposed(by: disposeBag)
-        
-        _ = notesView.rx.itemDeleted.subscribe(onNext: { [weak self] indexPath in
-            guard let self else { return }
-            var notesCopy = self.notes.value
-            let note = notesCopy.remove(at: indexPath.row)
+        DispatchQueue.main.async {
             
-            switch note.deleteNote() {
-            case.success(_):
-                print("success deleting")
-                self.notes.accept(notesCopy)
-            case .failure(let error):
-                print(error.localizedDescription)
+            _ = self.notes.bind(to: self.notesView.rx.items(cellIdentifier: "NotesListingCell", cellType: NoteListingCell.self)){ index, note, cell in
+                cell.configure(withNote: note)
             }
             
-        })
+            self.notesView.rx.modelSelected(Note.self)
+                .subscribe(onNext: {[weak self] element in
+                    guard let self else { return }
+                    
+                    let router: NoteListingRouterProtocol? = NoteListingRouter()
+                    router?.openNoteEditing(withNote: element, View: self)
+                    
+                }).disposed(by: self.disposeBag)
+            
+            _ = self.notesView.rx.itemDeleted.subscribe(onNext: { [weak self] indexPath in
+                guard let self else { return }
+                var notesCopy = self.notes.value
+                let note = notesCopy.remove(at: indexPath.row)
+                
+                switch note.deleteNote() {
+                case.success(_):
+                    print("success deleting")
+                    self.notes.accept(notesCopy)
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+                
+            })
+        }
     }
 
     func insertNewContent(_ notes: [Note]) {

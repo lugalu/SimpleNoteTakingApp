@@ -8,6 +8,7 @@
 import Foundation
 import RxSwift
 import RealmSwift
+import FirebaseDatabase
 
 class Note: Object, Decodable{
     @objc dynamic var id: UUID = UUID()
@@ -91,6 +92,58 @@ class Note: Object, Decodable{
             return Disposables.create()
             
         }
+    }
+    
+    static func newFrom(snapshot: DataSnapshot) -> Note?{
+        
+        
+        guard
+          let value = snapshot.value as? [String: AnyObject],
+          let idString = value["id"] as? String,
+          let id = UUID(uuidString: idString),
+          let title = value["title"] as? String,
+          let content = value["content"] as? String,
+          let createdString = value["created"] as? String
+        else {
+            print("error converting")
+          return nil
+        }
+        
+        
+        
+        let note = Note()
+        
+        guard let created = note.getDateFormatter().date(from: createdString) else {
+            print("error converting date")
+            return nil
+        }
+        
+        note.id = id
+        note.title = title
+        note.content = content
+        note.created = created
+        
+        return note
+    }
+    
+    func toAnyObject() -> Any{
+        let stringDate = getDateFormatter().string(from: self.created)
+       
+        return [
+            "id": id.uuidString,
+            "title": title,
+            "content": content,
+            "created": stringDate
+        ]
+        
+    }
+    
+    private func getDateFormatter() -> DateFormatter{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .short
+        dateFormatter.timeStyle = .short
+        
+        return dateFormatter
     }
     
 }
