@@ -1,5 +1,5 @@
 # simple Note Taking app
-This repo started as A SnapKitStudy repo but became a simple project about a note taking app that contains two separate database:
+Simple project about a note taking app that contains two separate database:
 * Local with realm
 * Remote with Firebase Database
 
